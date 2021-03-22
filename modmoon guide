@@ -1,0 +1,62 @@
+# ModMoon Guide
+
+**Please read [modmoon's gbatemp thread op](https://gbatemp.net/threads/modmoon-a-beautiful-simple-and-compact-mods-manager-for-the-nintendo-3ds.519080/) for a full guide on modmoon and run down, especially if you come across any errors. This guide is only to be a hand holding derivative of usage section on the gbatemp thread.**
+
+**What you need:**
+* Any 3ds family system with modern Luma 3ds. Guide [here](https://3ds.hacks.guide/)
+* [ModMoon](https://github.com/Swiftloke/ModMoon/releases/tag/v3.0.1)
+* [7zip](https://www.7-zip.org/download.html) or https://extract.me/
+* Any mod you want for any game you want. You can find mods on [gamebanana](https://gamebanana.com/), gbatemp, github, and maybe even places like r/3dshacks.
+
+## Section I: Enabling Game Patching
+1. Hold down select while turning on the system to boot into the luma configuration menu.
+2. Use the dpad to navigate to `Enable Game Patching`
+3. Press A to enable it. There should be an X inside the `( )` located left of "Enable Game Patching" after doing so.
+
+## Section II: Installing ModMoon
+1. Download and install the modmoon cia from the link above, or scan the qr below with fbi.
+![fancy modmoon qr](https://i.imgur.com/7QOBsHG.png)
+2. Launch modmoon once, complete its tutorial, then close modmoon. Please close modmoon by pressing start.
+
+## Section III: Preparing for the mod
+1. Inside of `\3ds\ModMoon\` create a folder named after the title id of the game you want to mod. The path should be `\3ds\ModMoon\[titleID]\`, but with the actual title id of the game you are trying to mod instead of "[titleID]"
+* If you don't know the title id, you can find it on [hax0kartik 3dsdb](https://hax0kartik.github.io/3dsdb/) or check it using fbi.
+2. Inside of `\3ds\ModMoon\[titleID]\` create a new folder called `Slot_X`, replacing X with the any number, starting with 1.
+* If this is your first mod for the game, you would name the folder `Slot_1` and the folder for the next mod for this game would be called `Slot_2` and the next `Slot_3` and so forth. Make sure X isn't replaced by a number that's already being used for that game.
+3. Use 7zip or https://extract.me/ to extract your mod.
+4. Inside of `\3ds\ModMoon\[titleID]\Slot_X\` make a new text file. Name it `desc.txt`, open it, add the name of the mod or short one line description, then save it.
+* If your mod comes with a desc.txt, just move it to `\3ds\ModMoon\[titleID]\Slot_X\`
+
+## Section IV: Installing the mod
+### If you aren't modding smash bros:
+1. Find the "romfs" folder that comes with your mod and place it in `\3ds\ModMoon\[titleID]\Slot_X\`
+* If you are using a mod that comes with a `code.ips`, place the `code.ips` inside `\3ds\ModMoon\[titleID]\Slot_X\` too.
+
+### If you are modding smash bros:
+**Disclaimer: I don't mod smash.**
+1. Create the file path `\saltysd\smash\` on the root of your sd card if it does not already exist, and keep it empty.
+* Afaik If you previously used Smash Selector, your mods were automatically migrated when you first started up modmoon. 
+2. Find the `smash` folder that comes with your mod, and place everything inside it into `\3ds\ModMoon\[titleID]\Slot_X\`
+* If there is no `smash` folder, check to see if the mod includes one or more of the following folders:
+>animcmd
+>item
+>model
+>motion
+>param
+>sound
+>stage
+>ui
+* If it does include these, place them in \3ds\ModMoon\[titleID]\Slot_X\
+* If those aren't present either, see all of `6. Installing Improper/Unorganize Mods` from [Miguel's saltysd guide](https://gamebanana.com/tuts/12434)
+3. If you're using custom saltysd, rename the `code.ips` accordingly, and place it in `\3ds\ModMoon\[titleID]\Slot_X\codes\`
+* The code.ips should be renamed `USAcode.ips`, `EURcode.ips`, or `JAPcode.ips`
+Bonus:
+There's a bunch mods that require [Neo's High Poly Code](https://cdn.discordapp.com/attachments/265378490994524160/587851008772931584/High_Poly_code.ips_All_Regions.zip)
+To use it, place the code.ips of your respective region into `\3ds\ModMoon\[titleID]\Slot_X\` for the mod you want to use it with.
+
+## Credits
+Swiftlocke and everyone who worked on modmoon for obvious reasons.
+`GlaZed_Belmont#4529` for their modmoon guide I used as a base.
+`Chromaryu#6870` for their layeredfs guide I used as a reference to make sure I didn't forget anything.
+[Miguel92398](https://gamebanana.com/members/1544766) for their saltysd tutorial I redirected to for installing unorganized mods.
+Neo for their high poly code for smash.
